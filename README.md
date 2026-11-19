@@ -29,7 +29,7 @@ Before running the application, make sure the following are installed:
 2. Navigate into the project folder:
 
    ```bash
-   cd vinylvault
+   cd CSI_3150_Assignment_3/vinylvault
    ```
 
    If the repository contains a separate `vinylvault` folder, navigate into that folder instead.
@@ -83,7 +83,7 @@ The VinylVault application is organized into reusable React components. The main
     - `cartCount` (Number): Total quantity of albums in the cart.
     - `subtotal` (Number): Total cost of all items in the cart.
   - **Callback Functions:**
-    - `addToCart(album)`: Adds an album to the cart or increases its quantity if it already exists.
+    - `addToCart(album, quantity = 1)`: Adds an album to the cart or increases its quantity if it already exists.
     - `updateQuantity(albumId, change)`: Increases or decreases the quantity of a selected album.
     - `removeFromCart(albumId)`: Removes an album from the cart.
     - `clearCart()`: Empties the cart after a successful checkout.
@@ -140,7 +140,7 @@ The VinylVault application is organized into reusable React components. The main
       - **Events:**
         - Uses `useParams()` to retrieve the album ID from the URL.
         - Increasing or decreasing the quantity updates the `quantity` state.
-        - Clicking Add to Cart calls `onAddToCart(album)` for each unit selected.
+        - Clicking Add to Cart calls `onAddToCart(album, quantity)` to add the selected quantity of records to the shopping cart.
         - Clicking Back to Catalog returns the user to the storefront.
       - **Displayed Information:**
         - Album cover
@@ -151,6 +151,7 @@ The VinylVault application is organized into reusable React components. The main
         - Catalog number
         - Record speed
         - Stock availability
+        - Album tracklist
 
     - **`<CheckoutPage />`** - `src/pages/CheckoutPage.jsx`
       - **Route:** `/checkout`
